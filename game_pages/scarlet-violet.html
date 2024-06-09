@@ -54,9 +54,127 @@
   </style>
 </head>
 
-<body>
+<script>
+  fetch('json/sv-data.json')
+    .then(response => response.json())
+    .then(data => {
+      const table = document.querySelector('table');
+      data.forEach(item => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${item.category}</td><td>${item.fileName}</td><td>${item.info}</td>`;
+        table.appendChild(row);
+      });
+    });
+</script>
+
+<!-- <body>
   <header>
     <h1>Scarlet & Violet Event Distributions</h1>
   </header>
   <main>
     <table>
+      <tr>
+        <th>Category</th>
+        <th>File Name</th>
+        <th>Info</th>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Pikachu</td>
+        <td>Pikachu Surf Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Swampert</td>
+        <td>Swampert Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Primarina</td>
+        <td>Primarina Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Empoleon</td>
+        <td>Empoleon Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Eevee</td>
+        <td>Eevee Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Typhlosion-Hisui</td>
+        <td>Typhlosion-Hisui Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Decidueye-Hisui</td>
+        <td>Decidueye-Hisui Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Mewtwo</td>
+        <td>Mewtwo Raid Event (Shiny Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Rillaboom</td>
+        <td>Rillaboom Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Gimmighoul-Chest</td>
+        <td>Gimmighoul-Chest Raid Event (Shiny)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Charizard</td>
+        <td>Charizard (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Cinderace</td>
+        <td>Cinderace (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Greninja</td>
+        <td>Greninja (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Decidueye</td>
+        <td>Decidueye Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Samurott-Hisui</td>
+        <td>Samurott-Hisui Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Samurott</td>
+        <td>Samurott Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Typhlosion</td>
+        <td>Typhlosion Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Inteleon</td>
+        <td>Inteleon Raid Event (Shiny-Locked)</td>
+      </tr>
+      <tr>
+        <td>7* RAIDS</td>
+        <td>Raid-Chesnaught</td>
+        <td>Chesnaught Raid Event (Shiny-Locked)</td>
+      </tr>
+    </table>
+  </main>
+</body> -->
+
+</html>
