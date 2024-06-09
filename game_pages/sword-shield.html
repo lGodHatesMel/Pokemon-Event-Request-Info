@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sword & Shield Event Distributions</title>
+    <title>Sword & Shield Special Request List</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -55,22 +55,62 @@
     </style>
 </head>
 
-<script>
-    fetch('../json/swsh-data.json')
-        .then(response => response.json())
-        .then(data => {
-            const table = document.querySelector('table');
-            data.forEach(item => {
-            const row = document.createElement('tr');
-            row.innerHTML = `<td>${item.category}</td><td>${item.fileName}</td><td>${item.info}</td>`;
-            table.appendChild(row);
-            });
-    });
-</script>
-
 <body>
     <header>
-        <h1>Sword & Shield Event Distributions</h1>
+        <h1>Sword & Shield Special Request List</h1>
     </header>
+
+    <style>
+        #categoryFilter {
+            font-size: 2.0em;
+            padding: 0.75em;
+            background-color: #df0707;
+            color: black;
+        }
+        
+        #categoryFilter:hover {
+            background-color: #059816;
+        }
+        
+        #categoryFilter option {
+            background-color: rgba(81, 79, 79, 0.719);
+        }
+    </style>
+
+    <select id="categoryFilter">
+        <option value="">All</option>
+        <iotpion value="CCOMING SOON">CCOMING SOON</option>
+    </select>
+
     <main>
         <table>
+            <tr>
+                <th>Category</th>
+                <th>File Name</th>
+                <th>Info</th>
+            </tr>
+            <tr>
+                <td>COMING SOON</td>
+                <td>COMING SOON</td>
+                <td>COMING SOON</td>
+            </tr>
+        </table>
+    </main>
+</body>
+
+    <script>
+        document.getElementById('categoryFilter').addEventListener('change', function() {
+            const category = this.value;
+            const rows = document.querySelectorAll('table tr:not(:first-child)');
+            rows.forEach(row => {
+                const cell = row.querySelector('td:first-child');
+                if (category === '' || cell.textContent === category) {
+                row.style.display = '';
+                } else {
+                row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</html>
