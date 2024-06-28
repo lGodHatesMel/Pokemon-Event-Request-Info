@@ -78,6 +78,26 @@
     font-size: 14px;
   }
 
+  .raid-request-button {
+    position: absolute;
+    top: 0;
+    right: 120px; /* Increased from 50px to 100px */
+    margin: 20px;
+    background-color: #007bff;
+    color: white; /* Text color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .button-logo {
+    width: 36px;
+    height: 24px;
+    margin-right: 8px;
+  }
+
   @media (max-width: 768px) {
     .info-box {
       width: 80%;
@@ -91,6 +111,9 @@
 
 <body>
   <h1 id="title">Pokémon Special Request List</h1>
+  <a href="https://knsnekoshi.com" class="raid-request-button">
+    <img src="images/sv-teraraid.png" alt="Logo" class="button-logo">Raid Request List
+  </a>
   <div class="button-container">
     <a href="game_pages/scarlet-violet.html" class="game-button">Scarlet & Violet</a>
     <a href="game_pages/sword-shield.html" class="game-button">Sword & Shield</a>
@@ -114,7 +137,6 @@
   <style>
     #title {
       color: red;
-
     }
 
     .info-box h2 {
