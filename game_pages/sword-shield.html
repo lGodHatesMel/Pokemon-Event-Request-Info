@@ -14,7 +14,7 @@
         }
 
         header {
-            background-color: #75bff2;
+            background-color: #39a1e6;
             padding: 10px 0;
             text-align: center;
         }
@@ -52,6 +52,21 @@
         .back-button:hover {
             background-color: #e9ecef;
         }
+
+        #categoryFilter {
+            font-size: 1.2em;
+            padding: 0.6em;
+            background-color: #b10303;
+            color: black;
+        }
+
+        #categoryFilter:hover {
+            background-color: #90ff9d;
+        }
+
+        #categoryFilter option {
+            background-color: rgba(81, 79, 79, 0.719);
+        }
     </style>
 </head>
 
@@ -60,6 +75,10 @@
         <h1>Sword & Shield Special Request List</h1>
     </header>
 
+    <a href="https://example.com/raid-request-list" class="raid-request-button">
+        <img src="images/logo.png" alt="Logo" class="button-logo">Raid Request List
+    </a>
+
     <style>
         #categoryFilter {
             font-size: 1.2em;
@@ -67,19 +86,29 @@
             background-color: #b10303;
             color: black;
         }
-        
+
         #categoryFilter:hover {
             background-color: #90ff9d;
         }
-        
+
         #categoryFilter option {
-            background-color: rgba(81, 79, 79, 0.719);
+            background-color: rgba(146, 143, 143, 0.7);
         }
+
+        .new {color: rgb(190, 6, 6);}
+        .event{color: rgb(9, 174, 9);}
+        .ditto{color: rgb(41, 135, 207);}
+        .eggs{color: rgb(190, 129, 14);}
+        .home{color: rgb(205, 205, 81);}
     </style>
 
-    <select id="categoryFilter">
+    <select id="categoryFilter" aria-label="Category Filter">
         <option value="">All</option>
-        <iotpion value="CCOMING SOON">CCOMING SOON</option>
+        <option value="NEW" class="new">NEW</option>
+        <option value="EVENTS-DISTRIBUTION" class="events">EVENTS-DISTRIBUTION</option>
+        <option value="DITTO" class="ditto">DITTO</option>
+        <option value="EGGS" class="eggs">EGGS</option>
+        <option value="HOME" class="home">HOME</option>
     </select>
 
     <main>
@@ -89,14 +118,30 @@
                 <th>File Name</th>
                 <th>Info</th>
             </tr>
-            <tr>
-                <td>COMING SOON</td>
-                <td>COMING SOON</td>
-                <td>COMING SOON</td>
+            <tr> 
+                <td class="new">NEW</td>
+                <td>Shiny POGO Mew</td>
+                <td>Pogo (Mew)</td>
+            </tr>
+            <tr> 
+                <td class="new">NEW</td>
+                <td>Shiny Emerald Mew</td>
+                <td>Emerald (Mew)</td>
+            </tr>
+
+            <!--MARK: HOME -->
+            <tr> 
+                <td class="home">HOME</td>
+                <td>Shiny POGO Mew</td>
+                <td>Pogo (Mew)</td>
+            </tr>
+            <tr> 
+                <td class="home">HOME</td>
+                <td>Shiny Emerald Mew</td>
+                <td>Emerald (Mew)</td>
             </tr>
         </table>
     </main>
-</body>
 
     <script>
         document.getElementById('categoryFilter').addEventListener('change', function() {
@@ -105,12 +150,12 @@
             rows.forEach(row => {
                 const cell = row.querySelector('td:first-child');
                 if (category === '' || cell.textContent === category) {
-                row.style.display = '';
+                    row.style.display = '';
                 } else {
-                row.style.display = 'none';
+                    row.style.display = 'none';
                 }
             });
         });
     </script>
-
+</body>
 </html>
